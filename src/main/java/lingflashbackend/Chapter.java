@@ -19,7 +19,7 @@ public class Chapter{
 		this.id=id;
 	}
 	public String getChaptitle(){
-		return title;
+		return chaptitle;
 	}
 	public void setChaptitle(String chaptitle){
 		this.chaptitle=chaptitle;
