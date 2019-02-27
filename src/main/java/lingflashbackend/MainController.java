@@ -45,7 +45,7 @@ public class MainController {
 				return "{\"response\":\"Success!\"}";
 			}
 		}
-		return "{\"response\":\"Unsuccessful Attempt\"}";
+		return "{\"response\":\"Unsuccessful Attempt. Username sent = " + username + " and password = " + password +"\"}";
 	}
 
 
