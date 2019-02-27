@@ -38,7 +38,15 @@ public class MainController {
 	public @ResponseBody String testCall(){
 		return "Success!";
 	}
-	
+	@PostMapping(path="/testunpw")
+	public @ResponseBody String login(@RequestParam String username, String password){
+		if(username.equals("dattilo"){
+			if(password.equals("fingerscrossed"){
+				return "Success!";
+			}
+		}
+		else return "Unsuccessful attempt.";
+	}
 
 
 /*	@GetMapping(path="/userinfo/get")
