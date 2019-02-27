@@ -45,7 +45,7 @@ public class MainController {
 				return "Success!";
 			}
 		}
-		else return "Unsuccessful attempt.";
+		return "Unsuccessful attempt.";
 	}
 
 
