@@ -42,10 +42,10 @@ public class MainController {
 	public @ResponseBody String login(@RequestParam String username, String password){
 		if(username.equals("dattilo")){
 			if(password.equals("fingerscrossed")){
-				return "Success!";
+				return "{\"response\":\"Success!\"}";
 			}
 		}
-		return "Unsuccessful attempt.";
+		return "{\"response\":\"Unsuccessful Attempt\"}";
 	}
 
 
