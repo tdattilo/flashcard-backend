@@ -39,10 +39,9 @@ public class MainController {
 		return "Success!";
 	}
 	@PostMapping(path="/testunpw")
-	public @ResponseBody String login(@RequestParam String input){
-		String[] values = input.split("$");
-		if(values[0].equals("dattilo")){
-			if(values[1].equals("fingerscrossed")){
+	public @ResponseBody String login(@RequestParam String username, @RequestParamString password){
+		if(username.equals("dattilo")){
+			if(password.equals("fingerscrossed")){
 				return "{\"response\":\"1\"}";
 			}
 		}
