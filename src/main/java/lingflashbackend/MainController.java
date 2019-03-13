@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 //import org.json.*;
 import java.util.Date;
 import java.util.Optional;
-import java.io.InputStream;
+//import java.io.InputStream;
 
 import lingflashbackend.People;
 import lingflashbackend.PeopleRepository;
@@ -41,7 +41,7 @@ public class MainController {
 		return "Success!";
 	}
 	@PostMapping(path="/testunpw")
-	public @ResponseBody String login(@RequestParam InputStream data){
+	public @ResponseBody String login(@RequestBody String data){
 		String username1 = "dattilo";
 		String password1 = "fingerscrossed";
 		if(username1.equals("dattilo")){
