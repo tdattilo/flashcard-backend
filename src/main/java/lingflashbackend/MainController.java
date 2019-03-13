@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.json.*;
 import java.util.Date;
 import java.util.Optional;
 
@@ -39,7 +40,9 @@ public class MainController {
 		return "Success!";
 	}
 	@PostMapping(path="/testunpw")
-	public @ResponseBody String login(@RequestParam String username, @RequestParam String password){
+	public @ResponseBody String login(@RequestParam String params){
+		String username = "dattilo";
+		String password = "fingerscrossed";
 		if(username.equals("dattilo")){
 			if(password.equals("fingerscrossed")){
 				return "{\"response\":\"1\"}";
