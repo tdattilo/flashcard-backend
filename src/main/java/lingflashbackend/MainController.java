@@ -43,10 +43,9 @@ public class MainController {
 	}
 	@PostMapping(path="/testunpw")
 	public @ResponseBody String login(@RequestBody String data){
-		String username1 = "dattilo";
-		String password1 = "fingerscrossed";
-		if(username1.equals("dattilo")){
-			if(password1.equals("fingerscrossed")){
+		JSONObject parsedData = new JSONObject(data);
+		if(parsedData.getString("username").equals("dattilo")){
+			if(parsedData.getString("password").equals("fingerscrossed")){
 				return "{\"response\":\"1\"}";
 			}
 		}
