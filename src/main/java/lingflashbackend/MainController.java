@@ -43,7 +43,7 @@ public class MainController {
 	}
 	@PostMapping(path="/testunpw")
 	public @ResponseBody String login(@RequestBody byte[] data){
-	String stringData = new String(data);
+	String stringData = new String(data, "UTF-16");
 	return stringData;
 		/*JSONObject parsedData = new JSONObject(data);
 		if(parsedData.getString("username").equals("dattilo")){
