@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.json.*;
 import java.util.Date;
 import java.util.Optional;
-//import java.io.InputStream;
 
 import lingflashbackend.People;
 import lingflashbackend.PeopleRepository;
@@ -45,9 +44,14 @@ public class MainController {
 	public @ResponseBody String login(@RequestBody String data){
 		
 		JSONObject parsedData = new JSONObject(data);
-		if(parsedData.getString("username").equals("dattilo")){
-			if(parsedData.getString("password").equals("fingerscrossed")){
-				return "{\"response\":\"1\"}";
+		if(parsedData!=null){
+			if(parsedData.has("username")){
+				if(parsedData.has("password")){
+					People p = new People();
+					p = peopleRepository.findByUnAndPw(parsedData.getString("username"), parsedData.getString("password"));
+					String response = "{\"response\":\"" + p.getId() + "\"}"
+					return response;
+				}
 			}
 		}
 		return "{\"response\":\"Unsuccessful Attempt.\"}";
