@@ -43,15 +43,14 @@ public class MainController {
 	}
 	@PostMapping(path="/testunpw")
 	public @ResponseBody String login(@RequestBody byte[] data){
-	String stringData = new String(data, "UTF-16");
-	return stringData;
-		/*JSONObject parsedData = new JSONObject(data);
+	String stringData = new String(data);
+		JSONObject parsedData = new JSONObject(stringData);
 		if(parsedData.getString("username").equals("dattilo")){
 			if(parsedData.getString("password").equals("fingerscrossed")){
 				return "{\"response\":\"1\"}";
 			}
 		}
-		return "{\"response\":\"Unsuccessful Attempt.\"}";*/
+		return "{\"response\":\"Unsuccessful Attempt.\"}";
 	}
 
 
