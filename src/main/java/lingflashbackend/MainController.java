@@ -42,8 +42,9 @@ public class MainController {
 		return "Success!";
 	}
 	@PostMapping(path="/testunpw")
-	public @ResponseBody String login(@RequestBody String data){
-	return data;
+	public @ResponseBody String login(@RequestBody byte[] data){
+	String stringData = new String(data);
+	return stringData;
 		/*JSONObject parsedData = new JSONObject(data);
 		if(parsedData.getString("username").equals("dattilo")){
 			if(parsedData.getString("password").equals("fingerscrossed")){
