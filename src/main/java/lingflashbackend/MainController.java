@@ -51,7 +51,6 @@ public class MainController {
 			}
 		}
 		return "{\"response\":\"Unsuccessful Attempt.\"}";
-		return data;
 	}
 
 
