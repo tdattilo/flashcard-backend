@@ -49,8 +49,11 @@ public class MainController {
 				if(parsedData.has("password")){
 					People p = new People();
 					p = peopleRepository.findByUnameAndPw(parsedData.getString("username"), parsedData.getString("password"));
-					String response = "{\"response\":\"" + p.getId() + "\"}";
-					return response;
+					if(p!=null){
+						String response = "{\"response\":\"" + p.getId() + "\"}";
+						return response;
+						}
+					return "{\"response\":\"Unsuccessful Attempt.\"}";
 				}
 			}
 		}
