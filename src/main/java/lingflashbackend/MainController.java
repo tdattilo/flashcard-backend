@@ -48,7 +48,7 @@ public class MainController {
 			if(parsedData.has("username")){
 				if(parsedData.has("password")){
 					People p = new People();
-					p = peopleRepository.findByUnAndPw(parsedData.getString("username"), parsedData.getString("password"));
+					p = peopleRepository.findByUnameAndPw(parsedData.getString("username"), parsedData.getString("password"));
 					String response = "{\"response\":\"" + p.getId() + "\"}";
 					return response;
 				}
