@@ -49,7 +49,7 @@ public class MainController {
 				if(parsedData.has("password")){
 					People p = new People();
 					p = peopleRepository.findByUnAndPw(parsedData.getString("username"), parsedData.getString("password"));
-					String response = "{\"response\":\"" + p.getId() + "\"}"
+					String response = "{\"response\":\"" + p.getId() + "\"}";
 					return response;
 				}
 			}
