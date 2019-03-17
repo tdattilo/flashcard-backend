@@ -57,7 +57,7 @@ public class MainController {
 		JSONObject parsedData = new JSONObject(data);
 		if(parsedData!=null){
 			if(parsedData.has("user_id")){
-					return bookRepository.findByOwner(parsedData.getInteger("user_id"));
+					return bookRepository.findByOwner(parsedData.getInt("user_id"));
 			}
 		}
 		return null;
@@ -67,7 +67,7 @@ public class MainController {
 		JSONObject parsedData = new JSONObject(data);
 		if(parsedData!=null){
 			if(parsedData.has("book_id")){
-					return chapterRepository.findByBookId(parsedData.getInteger("book_id"));
+					return chapterRepository.findByBookId(parsedData.getInt("book_id"));
 			}
 		}
 		return null;
@@ -77,7 +77,7 @@ public class MainController {
 		JSONObject parsedData = new JSONObject(data);
 		if(parsedData!=null){
 			if(parsedData.has("ch_id")){
-					return wordRepository.findByChId(parsedData.getInteger("ch_id"));
+					return wordRepository.findByChId(parsedData.getInt("ch_id"));
 			}
 		}
 		return null;
