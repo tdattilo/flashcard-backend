@@ -32,10 +32,6 @@ public class MainController {
 	@Autowired
 	private WordRepository wordRepository;
 
-	@GetMapping(path="/test")
-	public @ResponseBody String testCall(){
-		return "Success!";
-	}
 	@PostMapping(path="/unpw")
 	public @ResponseBody String login(@RequestBody String data){
 		

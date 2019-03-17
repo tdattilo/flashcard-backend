@@ -1,6 +1,7 @@
 package lingflashbackend;
 
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.lang.Nullable;
 
 import lingflashbackend.Word;
 
