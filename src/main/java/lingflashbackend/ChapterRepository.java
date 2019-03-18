@@ -7,5 +7,5 @@ import java.util.Optional;
 import lingflashbackend.Chapter;
 
 public interface ChapterRepository extends CrudRepository<Chapter, Integer>{
-	@Nullable Optional<Chapter> findByBookId(int bookId);
+	@Nullable Iterable<Chapter> findByBookId(int bookId);
 }

@@ -7,5 +7,5 @@ import java.util.Optional;
 import lingflashbackend.Book;
 
 public interface BookRepository extends CrudRepository<Book, Integer>{
-	@Nullable Optional<Book> findByOwner(int owner);
+	@Nullable Iterable<Book> findByOwner(int owner);
 }

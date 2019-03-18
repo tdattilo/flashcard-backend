@@ -53,7 +53,7 @@ public class MainController {
 	}
 
 	@PostMapping(path="/books")
-	public @ResponseBody Optional<Book> getBooks(@RequestBody String data){
+	public @ResponseBody Iterable<Book> getBooks(@RequestBody String data){
 		JSONObject parsedData = new JSONObject(data);
 		if(parsedData!=null){
 			if(parsedData.has("user_id")){
@@ -63,7 +63,7 @@ public class MainController {
 		return null;
 	}
 	@PostMapping(path="/chapters")
-	public @ResponseBody Optional<Chapter> getChapters(@RequestBody String data){
+	public @ResponseBody Iterable<Chapter> getChapters(@RequestBody String data){
 		JSONObject parsedData = new JSONObject(data);
 		if(parsedData!=null){
 			if(parsedData.has("book_id")){
@@ -73,7 +73,7 @@ public class MainController {
 		return null;
 	}
 	@PostMapping(path="/words")
-	public @ResponseBody Optional<Word> getWords(@RequestBody String data){
+	public @ResponseBody Iterable<Word> getWords(@RequestBody String data){
 		JSONObject parsedData = new JSONObject(data);
 		if(parsedData!=null){
 			if(parsedData.has("ch_id")){
