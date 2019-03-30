@@ -88,7 +88,7 @@ public class MainController {
 				if(obj.has("ch_id")){
 					resultList.addAll(wordRepository.findByChId(obj.getInt("ch_id")));
 				}
-			});
+			}
 		}
 		return resultList;
 	}
