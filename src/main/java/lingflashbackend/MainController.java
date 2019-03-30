@@ -46,11 +46,11 @@ public class MainController {
 						String response = "{\"response\":\"" + p.getId() + "\"}";
 						return response;
 						}
-					return "{\"response\":\"Unsuccessful Attempt.\"}";
+					return "{\"response\":\"-1}\"";
 				}
 			}
 		}
-		return "{\"response\":\"Unsuccessful Attempt.\"}";
+		return "{\"response\":\"-1}\"";
 	}
 
 	@PostMapping(path="/books")
@@ -63,10 +63,11 @@ public class MainController {
 		}
 		return null;
 	}
+	/*
 	@GetMapping(path="/gbooks")
 	public @ResponseBody Iterable<Book> getBooks(@RequestParam int uid){
 			return bookRepository.findByOwner(uid);
-	}
+	}*/
 	@PostMapping(path="/chapters")
 	public @ResponseBody Iterable<Chapter> getChapters(@RequestBody String data){
 		JSONObject parsedData = new JSONObject(data);
@@ -79,7 +80,7 @@ public class MainController {
 	}
 	@PostMapping(path="/words")
 	public @ResponseBody Iterable<Word> getWords(@RequestBody String data){
-		JSONObject parsedData = new JSONObject(data);
+		JSONArray parsedData = new JSONArray(data);
 		if(parsedData!=null){
 			if(parsedData.has("ch_id")){
 					return wordRepository.findByChId(parsedData.getInt("ch_id"));
