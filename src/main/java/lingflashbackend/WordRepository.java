@@ -6,5 +6,5 @@ import org.springframework.lang.Nullable;
 import lingflashbackend.Word;
 
 public interface WordRepository extends CrudRepository<Word, Integer>{
-	@Nullable Iterable<Word> findByChId(int chId);
+	@Nullable List<Word> findByChId(int chId);
 }

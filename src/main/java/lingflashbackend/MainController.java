@@ -81,13 +81,14 @@ public class MainController {
 	@PostMapping(path="/words")
 	public @ResponseBody Iterable<Word> getWords(@RequestBody String data){
 		JSONArray parsedData = new JSONArray(data);
+		List<word> resultList = new List();
 		if(parsedData!=null){
-			for each JSONObject obj in parsedData{
+			parsedData.forEach(obj->{
 				if(obj.has("ch_id")){
-					return wordRepository.findByChId(obj.getInt("ch_id"));
+					resultList.addAll(wordRepository.findByChId(obj.getInt("ch_id")));
 				}
-			}
+			});
 		}
-		return null;
+		return resultList;
 	}
 }
