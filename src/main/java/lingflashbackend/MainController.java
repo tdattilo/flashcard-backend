@@ -82,7 +82,7 @@ public class MainController {
 	@PostMapping(path="/words")
 	public @ResponseBody Iterable<Word> getWords(@RequestBody String data){
 		JSONObject parsedData = new JSONObject(data);
-		List<Word> resultList = new List<Word>();
+		List<Word> resultList = new ArrayList<Word>();
 		if(parsedData!=null){
 			if(parsedData.has("chapters")){
 				JSONArray array = parsedData.getJSONArray("chapters");
