@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.json.*;
+import java.util.list;
 
 import lingflashbackend.People;
 import lingflashbackend.PeopleRepository;
@@ -83,7 +84,7 @@ public class MainController {
 		JSONArray parsedData = new JSONArray(data);
 		List<word> resultList = new List();
 		if(parsedData!=null){
-			parsedData.forEach(obj->{
+			for(JSONObject obj:parsedData){
 				if(obj.has("ch_id")){
 					resultList.addAll(wordRepository.findByChId(obj.getInt("ch_id")));
 				}
