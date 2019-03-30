@@ -84,7 +84,7 @@ public class MainController {
 		JSONObject parsedData = new JSONObject(data);
 		List<Word> resultList = new List<Word>();
 		if(parsedData!=null){
-			if(parsedData.has("chapters"){
+			if(parsedData.has("chapters")){
 				JSONArray array = parsedData.getJSONArray("chapters");
 				for(int i=0; i<array.length(); i++){
 					JSONObject obj = array.getJSONObject(i);
