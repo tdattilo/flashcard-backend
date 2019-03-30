@@ -82,8 +82,10 @@ public class MainController {
 	public @ResponseBody Iterable<Word> getWords(@RequestBody String data){
 		JSONArray parsedData = new JSONArray(data);
 		if(parsedData!=null){
-			if(parsedData.getJSONObject(0).has("ch_id")){
-					return wordRepository.findByChId(parsedData.getJSONObject(0).getInt("ch_id"));
+			for each JSONObject obj in parsedData{
+				if(obj.has("ch_id")){
+					return wordRepository.findByChId(obj.getInt("ch_id"));
+				}
 			}
 		}
 		return null;
