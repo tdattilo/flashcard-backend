@@ -81,12 +81,16 @@ public class MainController {
 	}
 	@PostMapping(path="/words")
 	public @ResponseBody Iterable<Word> getWords(@RequestBody String data){
-		JSONArray parsedData = new JSONArray(data);
-		List<Word> resultList = new List();
+		JSONObject parsedData = new JSONObject(data);
+		List<Word> resultList = new List<Word>();
 		if(parsedData!=null){
-			for(JSONObject obj:parsedData){
-				if(obj.has("ch_id")){
-					resultList.addAll(wordRepository.findByChId(obj.getInt("ch_id")));
+			if(parsedData.has("chapters"){
+				JSONArray array = parsedData.getJSONArray("chapters");
+				for(int i=0; i<array.length(); i++){
+					JSONObject obj = array.getJSONObject(i);
+					if(obj.has("ch_id")){
+						resultList.addAll(wordRepository.findByChId(obj.getInt("ch_id")));
+					}
 				}
 			}
 		}
