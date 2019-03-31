@@ -94,12 +94,6 @@ public class MainController {
 					}
 				}
 			}
-			else{
-				return "{\"response\":\"-2}\"";
-			}
-		}
-		else{
-			return "{\"response\":\"-1}\"";
 		}
 		return resultList;
 	}
