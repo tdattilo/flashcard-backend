@@ -85,8 +85,8 @@ public class MainController {
 		JSONObject parsedData = new JSONObject(data);
 		List<Word> resultList = new ArrayList<Word>();
 		if(parsedData!=null){
-			if(parsedData.has("chapters")){
-				JSONArray array = parsedData.getJSONArray("chapters");
+			if(parsedData.has("data")){
+				JSONArray array = parsedData.getJSONArray("data");
 				for(int i=0; i<array.length(); i++){
 					JSONObject obj = array.getJSONObject(i);
 					if(obj.has("ch_id")){
@@ -94,6 +94,12 @@ public class MainController {
 					}
 				}
 			}
+			else{
+				return "{\"response\":\"-2}\"";
+			}
+		}
+		else{
+			return "{\"response\":\"-1}\"";
 		}
 		return resultList;
 	}
